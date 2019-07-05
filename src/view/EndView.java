@@ -1,26 +1,25 @@
 package view;
 
-import model.domain.People;
+import model.Student.Student;
 
 public class EndView {
-	//모든 데이터 출력
-	//? 단 배열의 특정 index의 값이 없는 즉, 참조하는 객체가 없는 null인 경우엔 절대 toString() 호출 불가
-	//어떻게 해결할것인가?
-	// People v 변수가 대입받을수 있는 값은? new People([..]) , null
-	public static void printAll(People[] all) {
-		for(People v : all) {
-			if(v != null) {
-				System.out.println(v.toString());
+
+	public static void printAttend(String name) { 
+			if(name != null) {
+				System.out.println(name);
 			}
 		}
+	
+	public static void printLate(String info) {
+		System.out.println(info);
 	}
-
-	public static void printSuccess(String msg) {
-		System.out.println(msg);
+	public static void printEarly(String info) {
+		System.out.println(info);
 	}
-
-	public static void printFail(String msg) {
-		System.out.println(msg);
+	public static void printAbsent(String info) {
+		System.out.println(info);
 	}
-
+	public static void printRequired(String info) {
+		System.out.println(info);
+	}
 }
