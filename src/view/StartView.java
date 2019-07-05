@@ -1,10 +1,13 @@
 package view;
 
-import controller.StudentController;
+import controller.FruitsController;
 
 public class StartView {
 
 	public static void main(String[] args) {
-		StudentController.request(1);
+
+		FruitsController.controller(4);
 	}
+	
+
 }
