@@ -23,4 +23,7 @@ public class Fruits {
 	public void setInven(int inven) {
 		this.inven = inven;
 	}
+	public String toString() {
+		return name + " " + inven;
+	}
 }
