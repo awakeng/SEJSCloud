@@ -24,18 +24,18 @@ public class BaeminCustomerInfoService {
 		return instance;
 	}
 
-	// ¸ğµç °í°´list ¹İÈ¯
+	// ëª¨ë“  ê³ ê°list ë°˜í™˜
 	public ArrayList<BaeminCustomerInfo> getAllList() {
 		return baeminVirtualData.getCustomertList();
 
 	}
 
-	// °í°´ °Ë»ö
+	// ê³ ê° ê²€ìƒ‰
 	public BaeminCustomerInfo getCustomerInfo2(String customerid) throws NotExistException {
 		BaeminCustomerInfo info = getCustomerInfo(customerid);
 		if (info == null) {
-			FailM.getInstance().error("error try : ¿¡·¯");
-			throw new NotExistException("°Ë»ö ¿äÃ»ÇÏ½Å ID´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+			FailM.getInstance().error("error try : ì—ëŸ¬");
+			throw new NotExistException("ê²€ìƒ‰ ìš”ì²­í•˜ì‹  IDëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 
 		}
 		return info;
@@ -50,42 +50,42 @@ public class BaeminCustomerInfoService {
 				info = v.get(i);
 			}
 		}
-		return info;
+		return info;							//1. 2ê°œë¡œ ë‚˜ëˆ ì„œ êµ¬í˜„í•œ ì´ìœ ?
 	}
 
-	// °í°´ Ãß°¡
+	// ê³ ê° ì¶”ê°€
 	public void CustomerInsert(BaeminCustomerInfo info) {
 		baeminVirtualData.insertCustomer(info);
 	}
 
-	// °í°´ Á¤º¸ ¼öÁ¤ - ÇÁ·ÎÁ§Æ® ¸íÀ¸·Î Àç´É ±âºÎÀÚ ¼öÁ¤
+	// ê³ ê° ì •ë³´ ìˆ˜ì • - í”„ë¡œì íŠ¸ ëª…ìœ¼ë¡œ ì¬ëŠ¥ ê¸°ë¶€ì ìˆ˜ì •
 	public void customerUpdate(String customerid, OrderInfo orderinfo) throws NotExistException {
 		BaeminCustomerInfo info = getCustomerInfo(customerid);
 		if (info == null) {
-			FailM.getInstance().error("error try : ¿¡·¯");
-			throw new NotExistException("xxxxxxx ¼öÁ¤ÇÏ°íÀÚ ÇÏ´Â °í°´Á¤º¸°¡ ¹Ì Á¸ÀçÇÕ´Ï´Ù. xxxxxxx\n");
+			FailM.getInstance().error("error try : ì—ëŸ¬");
+			throw new NotExistException("xxxxxxx ìˆ˜ì •í•˜ê³ ì í•˜ëŠ” ê³ ê°ì •ë³´ê°€ ë¯¸ ì¡´ì¬í•©ë‹ˆë‹¤. xxxxxxx\n");
 		}
 		if (orderinfo instanceof NewInfo) {
 			info.setNewinfo((NewInfo) orderinfo);
 		} else if (orderinfo instanceof LastInfo) {
 			info.setLastinfo((LastInfo) orderinfo);
 		} else {
-			FailM.getInstance().error("error try : ¿¡·¯");
-			throw new NotExistException("xxxxxxx ¼öÁ¤ÇÏ°íÀÚ ÇÏ´Â Á¤º¸°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù. xxxxxxx\n");
+			FailM.getInstance().error("error try : ì—ëŸ¬");
+			throw new NotExistException("xxxxxxx ìˆ˜ì •í•˜ê³ ì í•˜ëŠ” ì •ë³´ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤. xxxxxxx\n");
 		}
 	}
 
-	// °í°´Á¤º¸ »èÁ¦
+	// ê³ ê°ì •ë³´ ì‚­ì œ
 	public void customerDelete(String customerid) throws NotExistException {
 		BaeminCustomerInfo info = getCustomerInfo(customerid);
 		if (info == null) {
-			FailM.getInstance().error("error try : ¿¡·¯");
-			throw new NotExistException("xxxxxxx »èÁ¦ÇÏ°íÀÚ ÇÏ´Â °í°´Á¤º¸°¡ ¹Ì Á¸ÀçÇÕ´Ï´Ù. xxxxxxx\n");
+			FailM.getInstance().error("error try : ì—ëŸ¬");
+			throw new NotExistException("xxxxxxx ì‚­ì œí•˜ê³ ì í•˜ëŠ” ê³ ê°ì •ë³´ê°€ ë¯¸ ì¡´ì¬í•©ë‹ˆë‹¤. xxxxxxx\n");
 		}
 		baeminVirtualData.getCustomertList().remove(info);
 	}
 
-	// °í°´µî±Ş Ãß°¡
+	// ê³ ê°ë“±ê¸‰ ì¶”ê°€
 	public void insertCustomerGrade(ArrayList<BaeminCustomerInfo> customer) {
 		ArrayList<BaeminCustomerInfo> v = baeminVirtualData.getCustomertList();
 		int count = v.size();
@@ -104,7 +104,7 @@ public class BaeminCustomerInfoService {
 		}
 	}
 
-	// °í°´µî±Ş °Ë»ö
+	// ê³ ê°ë“±ê¸‰ ê²€ìƒ‰
 	public BaeminCustomerInfo searchGrade(String grade) throws NotExistException {
 		ArrayList<BaeminCustomerInfo> v = baeminVirtualData.getCustomertList();
 		BaeminCustomerInfo info = null;
@@ -115,13 +115,13 @@ public class BaeminCustomerInfoService {
 			}
 		}
 		if (info == null) {
-			FailM.getInstance().error("error try : ¿¡·¯");
-			throw new NotExistException("°Ë»ö ¿äÃ»ÇÏ½Å ID´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+			FailM.getInstance().error("error try : ì—ëŸ¬");
+			throw new NotExistException("ê²€ìƒ‰ ìš”ì²­í•˜ì‹  IDëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 		}
 		return info;
 	}
 
-	// Æ¯Á¤ µî±Ş È¸¿ø ¸ğµÎ °Ë»ö
+	// íŠ¹ì • ë“±ê¸‰ íšŒì› ëª¨ë‘ ê²€ìƒ‰
 	public ArrayList<BaeminCustomerInfo> searchAllGrade(String grade) throws NotExistException {
 		ArrayList<BaeminCustomerInfo> v = baeminVirtualData.getCustomertList();
 		ArrayList<BaeminCustomerInfo> v1 = baeminVirtualData.getGradeList();
@@ -134,23 +134,23 @@ public class BaeminCustomerInfoService {
 			}
 		}
 		if (info == null) {
-			FailM.getInstance().error("error try : ¿¡·¯");
-			throw new NotExistException("°Ë»ö ¿äÃ»ÇÏ½Å ID´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+			FailM.getInstance().error("error try : ì—ëŸ¬");
+			throw new NotExistException("ê²€ìƒ‰ ìš”ì²­í•˜ì‹  IDëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 		}
 		return v1;
 	}
 
-	// ¸ğµÎ JSON º¯È¯
+	// ëª¨ë‘ JSON ë³€í™˜
 	public JSONArray jsonAllCast() {
 		return JSONArray.fromObject(baeminVirtualData.getCustomertList());
 	}
 
-	// °³º° JSON º¯È¯
+	// ê°œë³„ JSON ë³€í™˜
 	public JSONArray jsonCast(String customerid) throws NotExistException {
 		BaeminCustomerInfo info = getCustomerInfo(customerid);
 		if (info == null) {
-			FailM.getInstance().error("error try : ¿¡·¯");
-			throw new NotExistException("xxxxxxx º¯È¯ÇÏ°íÀÚ ÇÏ´Â °í°´Á¤º¸°¡ ¹Ì Á¸ÀçÇÕ´Ï´Ù. xxxxxxx\n");
+			FailM.getInstance().error("error try : ì—ëŸ¬");
+			throw new NotExistException("xxxxxxx ë³€í™˜í•˜ê³ ì í•˜ëŠ” ê³ ê°ì •ë³´ê°€ ë¯¸ ì¡´ì¬í•©ë‹ˆë‹¤. xxxxxxx\n");
 		}
 
 		return JSONArray.fromObject(info);
