@@ -14,30 +14,30 @@ public class StartView {
 		BaeminVirtualDB db = BaeminVirtualDB.getInstance();
 		BaeminController controller = BaeminController.getInstance();
 
-		// »õ·Î¿î ÁÖ¹®³»¿ë
-		NewInfo customer1 = new NewInfo("01074125896", "ÄÚ¹ÙÄÚ Ãµ¾ÈÁ¡", "µ·±î½º", "Ãµ¾È", "½Å¼Ó¹è´Ş");
-		// Áö³­ ÃÖ±Ù ÁÖ¹® ³»¿ë
-		LastInfo customer11 = new LastInfo("01074125896", "¸Ş¹Ğ²É ÇÊ ¹«·Æ¿¡", "¸·±¹¼ö", "Ãµ¾È", "¹è¹ÎÄ«µå°áÁ¦");
-		// »õ·Î¿î °í°´ Á¤º¸
-		CustomerInfo customer111 = new CustomerInfo("ººÀ½¿Õ", "È«±æµ¿", "ÃæÃ»µµ Ãµ¾È½Ã", 27);
-		// »õ·Î¿î °í°´ Á¤º¸ ¸®½ºÆ®
+		// ìƒˆë¡œìš´ ì£¼ë¬¸ë‚´ìš©
+		NewInfo customer1 = new NewInfo("01074125896", "ì½”ë°”ì½” ì²œì•ˆì ", "ëˆê¹ŒìŠ¤", "ì²œì•ˆ", "ì‹ ì†ë°°ë‹¬");
+		// ì§€ë‚œ ìµœê·¼ ì£¼ë¬¸ ë‚´ìš©
+		LastInfo customer11 = new LastInfo("01074125896", "ë©”ë°€ê½ƒ í•„ ë¬´ë µì—", "ë§‰êµ­ìˆ˜", "ì²œì•ˆ", "ë°°ë¯¼ì¹´ë“œê²°ì œ");
+		// ìƒˆë¡œìš´ ê³ ê° ì •ë³´
+		CustomerInfo customer111 = new CustomerInfo("ë³¶ìŒì™•", "í™ê¸¸ë™", "ì¶©ì²­ë„ ì²œì•ˆì‹œ", 27);
+		// ìƒˆë¡œìš´ ê³ ê° ì •ë³´ ë¦¬ìŠ¤íŠ¸
 		BaeminCustomerInfo newCustomer = new BaeminCustomerInfo("encore5", customer1, customer11, customer111, null);
 
-		System.out.println("***** 0. °í°´ µî±Ş ¼³Á¤ ±âÁØ*****");
+		System.out.println("***** 0. ê³ ê° ë“±ê¸‰ ì„¤ì • ê¸°ì¤€*****");
 		System.out.println("--- 0~5 Silver ---");
 		System.out.println("--- 6~10 Gold ---");
 		System.out.println("--- 11~15 VIP ---");
-		System.out.println("--- 16ÀÌ»ó VVIP ---");
+		System.out.println("--- 16ì´ìƒ VVIP ---");
 		System.out.println();
 
-		// ¸ğµç °í°´Á¤º¸ °Ë»ö
-		System.out.println("***** 1. °í°´Á¤º¸ »ı¼º ÈÄ ¸ğµç °í°´Á¤º¸ °Ë»ö(µî±Ş¹ÌÆ÷ÇÔ) *****");
+		// ëª¨ë“  ê³ ê°ì •ë³´ ê²€ìƒ‰
+		System.out.println("***** 1. ê³ ê°ì •ë³´ ìƒì„± í›„ ëª¨ë“  ê³ ê°ì •ë³´ ê²€ìƒ‰(ë“±ê¸‰ë¯¸í¬í•¨) *****");
 		controller.customerAllList();
 		System.out.println();
 		System.out.println();
 		System.out.println();
 
-		System.out.println("***** 1 - 1. °í°´Á¤º¸ »ı¼º ÈÄ ¸ğµç °í°´Á¤º¸ °Ë»ö *****");
+		System.out.println("***** 1 - 1. ê³ ê°ì •ë³´ ìƒì„± í›„ ëª¨ë“  ê³ ê°ì •ë³´ ê²€ìƒ‰ *****");
 		controller.gradeInsert(db.getCustomertList());
 		controller.customerAllList();
 
@@ -46,8 +46,8 @@ public class StartView {
 		System.out.println();
 		System.out.println();
 
-		// »õ·Î¿î °í°´Á¤º¸ ÀúÀå
-		System.out.println("***** 2. »õ·Î¿î °í°´Á¤º¸ ÀúÀå ÈÄ  ¸ğµç °í°´Á¤º¸ °Ë»ö *****");
+		// ìƒˆë¡œìš´ ê³ ê°ì •ë³´ ì €ì¥
+		System.out.println("***** 2. ìƒˆë¡œìš´ ê³ ê°ì •ë³´ ì €ì¥ í›„  ëª¨ë“  ê³ ê°ì •ë³´ ê²€ìƒ‰ *****");
 		controller.insertCustomer(newCustomer);
 		controller.gradeInsert(db.getCustomertList());
 		controller.customerAllList();
@@ -57,8 +57,8 @@ public class StartView {
 		System.out.println();
 		System.out.println();
 
-		// Á¸ÀçÇÏ´Â °í°´Á¤º¸ °Ë»ö
-		System.out.println("***** 3. Á¸ÀçÇÏ´Â °í°´Á¤º¸ °Ë»ö *****");
+		// ì¡´ì¬í•˜ëŠ” ê³ ê°ì •ë³´ ê²€ìƒ‰
+		System.out.println("***** 3. ì¡´ì¬í•˜ëŠ” ê³ ê°ì •ë³´ ê²€ìƒ‰ *****");
 		controller.viewCustomer("encore3");
 
 		System.out.println();
@@ -66,17 +66,17 @@ public class StartView {
 		System.out.println();
 		System.out.println();
 
-		System.out.println("***** 4. ¹ÌÁ¸ÀçÇÏ´Â °í°´Á¤º¸ °Ë»ö - ¿¹¿ÜÃ³¸® È®ÀÎ¿ë *****");
-		controller.viewCustomer("½´¹ÙÀÌÃ³ ---");
+		System.out.println("***** 4. ë¯¸ì¡´ì¬í•˜ëŠ” ê³ ê°ì •ë³´ ê²€ìƒ‰ - ì˜ˆì™¸ì²˜ë¦¬ í™•ì¸ìš© *****");
+		controller.viewCustomer("ìŠˆë°”ì´ì²˜ ---");
 
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();
 
-		// Á¸ÀçÇÏ´Â °í°´Á¤º¸ ¾÷µ¥ÀÌÆ® test
-		System.out.println("***** 5. Á¸ÀçÇÏ´Â °í°´Á¤º¸ ¼öÁ¤ ÈÄ ¼öÁ¤ÇÑ °í°´Á¤º¸ °Ë»ö *****");
-		controller.updateCustomer("encore1", new NewInfo("01036985214", "BBQ °è¾ç±¸Á¡", "¾ç³äÄ¡Å²", "ÀÎÃµ", "ºü¸¥¹è¼Û"));
+		// ì¡´ì¬í•˜ëŠ” ê³ ê°ì •ë³´ ì—…ë°ì´íŠ¸ test
+		System.out.println("***** 5. ì¡´ì¬í•˜ëŠ” ê³ ê°ì •ë³´ ìˆ˜ì • í›„ ìˆ˜ì •í•œ ê³ ê°ì •ë³´ ê²€ìƒ‰ *****");
+		controller.updateCustomer("encore1", new NewInfo("01036985214", "BBQ ê³„ì–‘êµ¬ì ", "ì–‘ë…ì¹˜í‚¨", "ì¸ì²œ", "ë¹ ë¥¸ë°°ì†¡"));
 		controller.viewCustomer("encore1");
 
 		System.out.println();
@@ -84,21 +84,21 @@ public class StartView {
 		System.out.println();
 		System.out.println();
 
-		// ¹Ì Á¸ÀçÇÏ´Â °í°´Á¤º¸ ¾÷µ¥ÀÌÆ® test : ¿¹¿Ü ¹ß»ı
-		System.out.println("***** 6. ¹ÌÁ¸ÀçÇÏ´Â °í°´Á¤º¸ ¼öÁ¤ - ¿¹¿ÜÃ³¸® È®ÀÎ¿ë *****");
-		controller.updateCustomer("¸¶´õÅ×·¹»ç--", new NewInfo("01036985214", "¶Ç·¡¿À·¡ ºÀÃµÁ¡", "¾ç³äÄ¡Å²", "ÀÎÃµ", "ºü¸¥¹è¼Û"));
+		// ë¯¸ ì¡´ì¬í•˜ëŠ” ê³ ê°ì •ë³´ ì—…ë°ì´íŠ¸ test : ì˜ˆì™¸ ë°œìƒ
+		System.out.println("***** 6. ë¯¸ì¡´ì¬í•˜ëŠ” ê³ ê°ì •ë³´ ìˆ˜ì • - ì˜ˆì™¸ì²˜ë¦¬ í™•ì¸ìš© *****");
+		controller.updateCustomer("ë§ˆë”í…Œë ˆì‚¬--", new NewInfo("01036985214", "ë˜ë˜ì˜¤ë˜ ë´‰ì²œì ", "ì–‘ë…ì¹˜í‚¨", "ì¸ì²œ", "ë¹ ë¥¸ë°°ì†¡"));
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();
 
-		// ¸ğµç °í°´Á¤º¸ °Ë»ö ¶Ç´Â »èÁ¦ÇÑ °í°´Á¤º¸ °Ë»ö
-		System.out.println("***** 7. Á¤º¸ »èÁ¦ ÈÄ ÇØ´ç °í°´Á¤º¸ °Ë»ö *****");
+		// ëª¨ë“  ê³ ê°ì •ë³´ ê²€ìƒ‰ ë˜ëŠ” ì‚­ì œí•œ ê³ ê°ì •ë³´ ê²€ìƒ‰
+		System.out.println("***** 7. ì •ë³´ ì‚­ì œ í›„ í•´ë‹¹ ê³ ê°ì •ë³´ ê²€ìƒ‰ *****");
 		controller.deleteCustomer("encore5");
 		controller.viewCustomer("encore5");
 		System.out.println();
 
-		System.out.println("***** 8. JSON º¯È¯ ÈÄ °í°´Á¤º¸ °Ë»ö *****");
+		System.out.println("***** 8. JSON ë³€í™˜ í›„ ê³ ê°ì •ë³´ ê²€ìƒ‰ *****");
 		controller.allCastJson();
 
 		System.out.println();
@@ -106,7 +106,7 @@ public class StartView {
 		System.out.println();
 		System.out.println();
 
-		System.out.println("***** 9. °³º° JSON º¯È¯ ÈÄ °í°´Á¤º¸ °Ë»ö *****");
+		System.out.println("***** 9. ê°œë³„ JSON ë³€í™˜ í›„ ê³ ê°ì •ë³´ ê²€ìƒ‰ *****");
 		controller.CastJson("encore2");
 
 		System.out.println();
@@ -114,21 +114,21 @@ public class StartView {
 		System.out.println();
 		System.out.println();
 
-		System.out.println("***** 10. Àß¸øµÈ Á¤º¸ JSON º¯È¯ *****");
+		System.out.println("***** 10. ì˜ëª»ëœ ì •ë³´ JSON ë³€í™˜ *****");
 		System.out.println();
 		controller.CastJson("ensdkf");
 
-		System.out.println("***** 11. Æ¯Á¤ µî±Ş °í°´ Ãâ·Â *****");
+		System.out.println("***** 11. íŠ¹ì • ë“±ê¸‰ ê³ ê° ì¶œë ¥ *****");
 		System.out.println();
 		System.out.println();
 		controller.gradePrint("Silver");
 		System.out.println();
 		System.out.println();
 
-		System.out.println("***** 12. Æ¯Á¤ µî±Ş °í°´ ¸ğµÎ Ãâ·Â *****");
+		System.out.println("***** 12. íŠ¹ì • ë“±ê¸‰ ê³ ê° ëª¨ë‘ ì¶œë ¥ *****");
 		System.out.println();
 		System.out.println();
 		controller.allGradePrint("Gold");
 	}
 
-}
+}	// ì •ë§ ì˜í•˜ì…¨ë„¤ìš”. ìˆ˜ê³  ë§ìœ¼ì…¨ìŠµë‹ˆë‹¤.
